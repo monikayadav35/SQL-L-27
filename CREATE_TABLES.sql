@@ -162,6 +162,88 @@ select * , char_length(countrycode) from test6;
 select * from test6;
 
 
+-- DDL (Data Definition Language)
+
+
+-- ddl statment 
+create table test10 (id int,name varchar(20));
+insert into test10 values(1,'abhi'),(2,'shimi'),(3,'yash');
+select * from test10;
+
+
+-- ddl drop statment [drop will delete both structure and table]
+drop table test10;-- drop table structure is dropped/remove
+
+
+
+
+create table test10 (id int,name varchar(20));
+insert into test10 values(1,'abhi'),(2,'shimi'),(3,'yash');
+select * from test10;
+
+-- ddl truncate [data is deleted but not the table stucture]
+truncate  test10;
+
+
+-- ALTER 
+ drop table test11;
+create table test11 (id int,name varchar(20));
+insert into test11 values(1,'abhi'),(2,'shimi'),(3,'yash');
+select * from test11;
+
+alter table test11 add column (salary int);-- to add column 
+alter table test11 add column (age int default 18); 
+alter table test11 drop column salary;-- to delete salary
+alter table test11 rename column age to newage; -- rename 
+alter table test11 add constraint  primary key(id) ;
+desc test10;
+
+select * from test11;
+
+
+
+-- add a column before a name column (before the name column)
+-- change the datatype  name to  integer datatype
+-- add a not null constrain to the name age column  (age ,na,me
+
+-- add a foregeign key of a column name as department id refrence to department column)
+
+
+--
+-- -------------------------------
+select database();
+select * from sakila.actor;
+
+select actor_id,first_name from sakila.actor;
+-- ------------------------------------------------
+select database();
+
+select * from sakila.actor;
+
+create table monika35 as
+select actor_id,first_name from sakila.actor;
+
+select * from monika35;
+
+
+
+-- INSERT ,UPDATE ,DELETE
+
+select * from monika35;
+insert into monika35 values(1999,'japan');
+
+
+-- update
+set sql_safe_updates=0;   -- safe mode remove sql ka  
+update monika35 set first_name='urvashi';
+
+update monika35 set first_name='monika' where actor_id=2;
+
+select * from monika35;
+
+delete from monika35;
+
+
 
 
 
